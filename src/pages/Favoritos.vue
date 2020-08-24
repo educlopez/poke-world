@@ -1,17 +1,21 @@
 <template>
-  <div>
-    <h1 class="overview-favorite-pokemon__title">
-      Mis Favoritos
+
+
+  <div class="col-md-12">
+    <h1 class="text-center">
+      Mi Equipo
     </h1>
-    <router-link class="btn btn-primary" to="/">
+    <router-link class="btn btn-primary text-center" to="/">
       Atrás
     </router-link>
-    <div class="overview-favorite-pokemon">
+  <div class="col-md-12">
+    <div class="row">
       <pokemon-card
         v-for="(pokemon, index) in stateFavoritePokemonList"
         :key="index"
         :pokemon-name="pokemon"
       />
+    </div>
     </div>
   </div>
 </template>
@@ -34,8 +38,5 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.overview-favorite-pokemon__title {
-  margin-top: 10px;
-  text-align: center;
-}
+
 </style>

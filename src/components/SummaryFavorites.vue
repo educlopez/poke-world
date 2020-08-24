@@ -1,17 +1,14 @@
 <template>
   <div>
-    <h2
+    <h2 class="text-center"
       >Equipo
-      <span
-        v-if="favoriteListLength > 1 && favoriteListLength < maximumList"
-        style="font-size:12px"
-      >
-        ({{ maximumList - favoriteListLength }} Pokémon más)
-      </span>
-      <span v-if="favoriteListLength > 5" style="font-size:12px">
-        (Completo)
-      </span>
     </h2>
+    <button v-if="favoriteListLength > 0 && favoriteListLength < maximumList" type="button" class="btn btn-primary">
+        Pokémon restantes <span class="badge badge-light">{{ maximumList - favoriteListLength }}</span>
+      </button>
+      <button v-if="favoriteListLength > 5" type="button" class="btn btn-primary">
+        Completo
+      </button>
 
     <p v-if="favoriteListLength < maximumList">
       No me decido, ayudame
@@ -25,12 +22,12 @@
     <template>
       <div class="col-md-12">
         <ul
-          class="justify-content-center list-group list-group-horizontal my-5"
+          class="justify-content-center list-group list-group-horizontal-sm my-5"
         >
           <li
             v-for="(pokemonName, index) in favorites"
             :key="index"
-            class="list-group-item text-capitalize"
+            class="list-group-item text-capitalize flex-fill"
           >
             <img src="../assets/pokeball.png" alt="pokeball" />
             {{ pokemonName }}
@@ -50,9 +47,9 @@
       <router-link
         v-if="favoriteListLength > 0"
         class="btn btn-primary"
-        to="/favorites"
+        to="/favoritos"
       >
-        Ver favoritos
+        Ver Equipo
       </router-link>
     </p>
   </div>

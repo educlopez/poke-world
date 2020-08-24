@@ -1,7 +1,7 @@
 <template>
-  <div class="select-pokemon-page">
-    <img src="./../assets/logo-pixel.gif" alt="pokémon" />
-    <div class="col-md-12">
+
+  <div>
+    <div class="col-md-12 text-center">
       <summary-favorites
         :pokemon-list="statePokemonDataList"
         :favorites="stateFavoritePokemonList"
@@ -9,7 +9,7 @@
         @eraseFavoritePokemonList="eraseFavoritePokemonList"
       />
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
       <pokemon-list
         :pokemon-list="statePokemonDataList"
         :favorites="stateFavoritePokemonList"
@@ -18,12 +18,14 @@
       />
     </div>
   </div>
+
 </template>
 
 <script>
 import PokemonList from '@/components/PokemonList';
 import SummaryFavorites from '@/components/SummaryFavorites';
 import { mapState, mapActions } from 'vuex';
+
 
 export default {
   components: {
@@ -54,12 +56,4 @@ export default {
 </script>
 
 <style scoped>
-.select-pokemon-page {
-  text-align: center;
-}
-.select-pokemon-content {
-  text-align: left;
-  display: flex;
-  justify-content: space-evenly;
-}
 </style>

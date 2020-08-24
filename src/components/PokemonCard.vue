@@ -1,8 +1,9 @@
 <template>
   <div
     v-if="pokemonData && pokemonDescription"
-    class="card card-margin pokemon-card"
+    class="col-12 col-md-4 my-3"
   >
+  <div class="card">
     <img
       :src="
         `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png`
@@ -18,13 +19,14 @@
         <span
           v-for="(typesOfPokemon, index) in pokemonData.types"
           :key="`type${index}`"
-          :class="`badge badge-${typesOfPokemon.type.name}`"
+          :class="`badge badge-pill badge-${typesOfPokemon.type.name}`"
         >
           {{ typesOfPokemon.type.name }}
         </span>
       </p>
       <p>{{ pokemonDescription[0].flavor_text }}</p>
       <a href="#" class="btn btn-primary">boton aun sin uso</a>
+    </div>
     </div>
   </div>
 </template>
@@ -70,13 +72,6 @@ export default {
 </script>
 
 <style scoped>
-.pokemon-card {
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-}
-.card-margin {
-  margin: 14px;
-}
 .badge-grass {
   color: #fff;
   background-color: #28a745;
@@ -86,7 +81,7 @@ export default {
   background-color: #635bff;
 }
 .badge-fire {
-  color: #fff;
-  background-color: orange;
+  color: #cd3d64;
+  background-color: #fde2dd;
 }
 </style>

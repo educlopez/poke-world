@@ -1,16 +1,20 @@
 <template>
   <div>
+    <NavBar />
     <fade-transition :duration="200" origin="center top" mode="out-in">
-      <router-view />
+      <div class="container">
+        <router-view />
+      </div>
     </fade-transition>
   </div>
 </template>
 
 <script>
 import { FadeTransition } from 'vue2-transitions';
+import NavBar from '@/components/NavBar';
 export default {
   name: 'App',
-  components: { FadeTransition },
+  components: { FadeTransition,NavBar },
 };
 </script>
 
@@ -26,6 +30,10 @@ body {
   line-height: 1.4em;
   color: #525f7f !important;
 }
+h1{
+  color: #0a2540;
+  font-size: 48px;
+}
 h2 {
   color: #0a2540;
   font-size: 38px;
@@ -33,5 +41,9 @@ h2 {
 p {
   color: #425466;
   font-size: 12px;
+}
+.card{
+  border: 0;
+  box-shadow: 0 0 2rem 0 rgba(136,152,170,.15);
 }
 </style>
