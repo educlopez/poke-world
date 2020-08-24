@@ -1,5 +1,4 @@
 <template>
-
   <div>
     <div class="col-md-12 text-center">
       <summary-favorites
@@ -18,7 +17,6 @@
       />
     </div>
   </div>
-
 </template>
 
 <script>
