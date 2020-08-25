@@ -2,6 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -9,10 +10,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 //Icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-  faHeart,
+  faHeart as fasHeart,
   faTimesCircle,
-  faSquare,
 } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import {
   faInstagram,
   faTwitter,
@@ -21,9 +22,9 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 library.add(
-  faHeart,
+  fasHeart,
   faTimesCircle,
-  faSquare,
+  farHeart,
   faInstagram,
   faTwitter,
   faLinkedin,

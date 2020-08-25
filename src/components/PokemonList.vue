@@ -6,11 +6,11 @@
         <div
           v-for="(pokemon, index) in pokemonList"
           :key="pokemon.url"
-          class="col-6 col-md-2 my-3"
+          class="col-6 col-md-3 my-3"
         >
           <div class="card">
             <span style="position:absolute;top:10px;left:10px">
-              <span class="badge badge-warning">{{ index + 1  }}</span>
+              <span class="badge badge-warning">{{ index + 1 }}</span>
             </span>
             <div style="position:absolute;top:10px;right:10px">
               <font-awesome-icon
@@ -20,7 +20,7 @@
               />
               <font-awesome-icon
                 v-else
-                :icon="['fas', 'square']"
+                :icon="['far', 'heart']"
                 class="text-info"
               />
             </div>
@@ -63,7 +63,7 @@
 
 <script>
 export default {
-  name: "PokemonList",
+  name: 'PokemonList',
   props: {
     pokemonList: {
       type: Array,
@@ -83,11 +83,11 @@ export default {
     setFavorites(name) {
       if (this.favorites.includes(name)) {
         const indexInArray = this.favorites.indexOf(name);
-        this.$emit("deleteFavorite", indexInArray);
+        this.$emit('deleteFavorite', indexInArray);
         return;
       }
       if (this.favoriteListLength < 6) {
-        this.$emit("addFavorite", name);
+        this.$emit('addFavorite', name);
       }
     },
     playPokemonCry(pokemonId) {

@@ -20,10 +20,9 @@
 </template>
 
 <script>
-import PokemonList from '@/components/PokemonList';
-import SummaryFavorites from '@/components/SummaryFavorites';
-import { mapState, mapActions } from 'vuex';
-
+import PokemonList from "@/components/PokemonList";
+import SummaryFavorites from "@/components/SummaryFavorites";
+import { mapState, mapActions } from "vuex";
 
 export default {
   components: {
@@ -31,7 +30,7 @@ export default {
     SummaryFavorites,
   },
   computed: {
-    ...mapState(['statePokemonDataList', 'stateFavoritePokemonList']),
+    ...mapState(["statePokemonDataList", "stateFavoritePokemonList"]),
   },
   async created() {
     const pokemonData = await this.getPokemonData();
@@ -39,15 +38,15 @@ export default {
   },
   methods: {
     async getPokemonData() {
-      const data = await fetch('https://pokeapi.co/api/v2/pokemon?limit=251');
+      const data = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
       const json = await data.json();
       return json.results;
     },
     ...mapActions([
-      'setPokemonData',
-      'addFavorite',
-      'deleteFavorite',
-      'eraseFavoritePokemonList',
+      "setPokemonData",
+      "addFavorite",
+      "deleteFavorite",
+      "eraseFavoritePokemonList",
     ]),
   },
 };

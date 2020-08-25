@@ -1,14 +1,19 @@
 <template>
   <div>
-    <h2 class="text-center"
-      >Equipo
-    </h2>
-    <button v-if="favoriteListLength > 0 && favoriteListLength < maximumList" type="button" class="btn btn-primary">
-        Pokémon restantes <span class="badge badge-light">{{ maximumList - favoriteListLength }}</span>
-      </button>
-      <button v-if="favoriteListLength > 5" type="button" class="btn btn-primary">
-        Completo
-      </button>
+    <h2 class="text-center">Equipo </h2>
+    <button
+      v-if="favoriteListLength > 0 && favoriteListLength < maximumList"
+      type="button"
+      class="btn btn-primary"
+    >
+      Pokémon restantes
+      <span class="badge badge-light">{{
+        maximumList - favoriteListLength
+      }}</span>
+    </button>
+    <button v-if="favoriteListLength > 5" type="button" class="btn btn-primary">
+      Completo
+    </button>
 
     <p v-if="favoriteListLength < maximumList">
       No me decido, ayudame
